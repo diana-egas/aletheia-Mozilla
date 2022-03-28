@@ -13,5 +13,12 @@ There are two ways of select images to analyze:
 1. Local Menu, user upload image to extension and then is send to server where is processed by svm model. The response contain image and classification: true or false.
 2. Site Menu,images of web site are send to server where is processed by svm model. The response contain image and classification: true or false.
 
-##### sub heading
+# Components
+- Chrome Extension (links)
+- Flask Server
+
+# From beginning to end
+### Step 1: Analyzing the problem
+### Step 2: 
+
 ![ananas1](https://user-images.githubusercontent.com/38374862/160453804-71b08083-c40b-46d4-97d3-025d9e181536.png)
