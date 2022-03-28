@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<script src="static/java.js"></script>
+<link href="/static/css/edit.css" rel="stylesheet">
+<!--EXEMPLO PARA TESTAR COISAS-->
+
+<div id="resultados">
+  <input  action ="/hello" value="exemlo_test" type="button" id="botao">
+  <!--<p id="x" >{{x}}</p>-->
+</div>
+<ul>
+  <li id="local" ><a href="#">Local</a> </li>
+
+  <li id="site" ><a href="#">Site</a> </li>
+
+  <li id="about"><a href="#">About</a></li>
+  <!--por se calhar uma descrição "about"-->
+</ul>
+
+<p id="alarm">Loading images...</p>
+
+<div id="about_text">
+
+  <p>
+    <p id="title">Local:</p> 
+      Choose one image from you local folder to process and display  response
+      about the veracity.
+      <br><br>
+    <p id="title">Site:</p>  
+      <!--The same as previous but the images will be from your current page.-->
+      Automatically loading images from current page, process it and display response about veracity.
+      <br>
+      <br>
+      (*) process &asymp; 35 seconds
+
+  </p>
+</div>
+
+<br>
+
+<div id="select">
+  <!--<label for="myfile" id="label">From current site:</label> -->
+  <button id="teste">Select File</button>
+  <!--<p id="imagens_web">{{y}}</p>-->
+</div>
+
+<!--UPLOAD DE FICHEIROS LOCAIS-->
+<div id="upload">
+  <form action = "http://127.0.0.1:5000/uploader" method = "POST" enctype = "multipart/form-data">
+    <input id="file" type='file' name = 'file'  />
+    <input  id ="sub" value="Upload" type = "submit"/>
+  </form>
+</div>
+
+
+<!--EXECUTAR SVM MODEL via upload-->
+
+<div>
+  <input  action ="/execute" type="button" id="executar" value="Process l (SVM)">
+  <!--<p id ="resultado">{{resultado}}</p>-->
+</div>
+
+<!--DOWNLOAD DE IMAGENS DADO 1 LINK-->
+<div id="download">
+  <!--<label for="myfile" id="label">From current site:</label> -->
+  <input  action ="/web_image" value = "Download images"type="button" id="img_down">
+  <!--<p id="imagens_web">{{y}}</p>-->
+</div>
+
+
+<!--EXECUTAR SVM MODEL via web-->
+
+<div>
+  <input  action ="/execute_web" type="button" id="executar_web" value="Process s (SVM)">
+  <!--<p id ="resultado_web">{{resultado}}</p>-->
+</div>
+
+
+<!--GRID IMAGES via upload-->
+<div id="grid"></div>
+
+<!--GRID IMAGES via web-->
+<div id="grid1"></div>
+
+  
+
+<!--EXEMPLO-->
+<div id="images"></div>
+
+</body>
+</html>
