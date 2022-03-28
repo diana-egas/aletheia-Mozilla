@@ -1,0 +1,172 @@
+body{
+    background-color: rgba(223, 212, 65, 0.281);
+	margin: 40px;
+}
+
+#x{	
+    display: none;
+}
+
+#resultado{
+    display:none;
+}
+
+#resultado_web{
+    display:none;
+}
+
+#imagens_web{
+    
+    display: none;
+}
+#botao{
+	display:none;
+}
+ 
+img {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.3;
+    width:  150px;
+    height: 150px;
+}
+#img_down{
+
+	color: black;
+	border: 3px solid darkred;
+	background-color: white;
+	border-radius: 2px;
+}
+#executar_web{
+    display: none;
+	color: black;
+	border: 3px solid darkred;
+	background-color: white;
+	border-radius: 2px;
+}
+#executar{
+   
+    display: none;
+}
+
+#h3_u{
+	font-size: large;
+	margin: 0;
+	color: darkred;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+	
+	/*funciona no upload*/
+	/*margin: 0;
+	position: absolute;
+	font-size: large;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50);
+	display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+h3{
+	font-size: large;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50);
+	color: darkred;
+}
+#grid{
+	position: relative; 
+	width: 100%; 
+}
+#grid1{
+	position: relative; 
+	width: 100%; 
+	/*justify-content: center*/
+}
+#sub{
+	margin-bottom: 20px;
+}
+#sub:hover {
+	background:linear-gradient(to bottom, #ddebfc 5%, #bfcce3 100%);
+	background-color:#ddebfc;
+}
+#sub:active {
+	position:relative;
+	top:1px;
+}
+#option{
+	text-align: center;
+	font-weight: bold;
+	font-size: large;
+}
+
+#label{
+	margin-top: 5px;
+	color: seagreen;
+	font-weight: bold;
+	font-size: 15px;
+	display: flex;
+width: 300px;
+line-height: 26px;
+margin-bottom: 10px;
+}
+
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+    width: 300px;
+    display: table;
+    table-layout: fixed;
+}
+ul li {
+    display: table-cell;
+}
+ul li a {
+    display: block;
+	color: white;
+	padding: 10px 40px ;
+
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+#upload{
+	display:none;
+}
+
+
+#download{
+	display: none;
+	
+}
+#alarm{
+	color: darkred;
+	display: none;
+}
+#title{
+	color: darkred;
+	font-weight: bold;
+}
+#about_text{
+	display: initial;
+}
+#teste{
+	display: none;
+	color: black;
+	border: 3px solid darkred;
+	background-color: white;
+	border-radius: 2px;
+}
