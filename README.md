@@ -16,6 +16,8 @@ There are two ways of select images to analyze:
 # Components
 - Chrome Extension (links)
 - Flask Server
+- 
+# Installation
 
 # From beginning to end
 ### Step 1: Analyzing the problem
@@ -24,3 +26,7 @@ There are two ways of select images to analyze:
 ### Step 4: Publishing the Extension to Chrome Web Store
 
 ![ananas1](https://user-images.githubusercontent.com/38374862/160453804-71b08083-c40b-46d4-97d3-025d9e181536.png)
+
+
+# References
+- Find SVM Model here: [svm](https://github.com/saraferreirascf/Photo-and-video-manipulations-detector/tree/main/Scripts)
