@@ -1,7 +1,7 @@
 # aletheia-chrome-extension
 Chrome extension that detect fakeness of images.
 
-# link to chrome web store! - https://developer.chrome.com/docs/extensions/reference/tabs/
+# link to chrome web store! - https://chrome.google.com/webstore/devconsole/2050c6ce-e678-4fbf-853a-c3c2d6a207bc?hl=pt-BR
 ## heading
 
 ##### sub heading
