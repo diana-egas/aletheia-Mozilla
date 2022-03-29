@@ -18,6 +18,7 @@ There are two ways of select images to analyze:
 - Flask Server
 - 
 # Installation
+- Install [Flask](https://flask.palletsprojects.com/en/2.0.x/installation/#install-flask)
 
 # From beginning to end
 ### Step 1: Analyzing the problem
