@@ -1,4 +1,4 @@
-# Aletheia - Chrome Extension 
+# Aletheia - Chrome Extension :pineapple:
 Chrome extension that detect fakeness of images.
 
 # Link to chrome web store! - [Aletheia](https://chrome.google.com/webstore/devconsole/2050c6ce-e678-4fbf-853a-c3c2d6a207bc?hl=pt-BR)
@@ -18,7 +18,12 @@ There are two ways of select images to analyze:
 - Flask Server
 - 
 # Installation
+Before install flask make sure that you have version 3.6 ou newer of python .
 - Install [Flask](https://flask.palletsprojects.com/en/2.0.x/installation/#install-flask)
+You can install extension through chrome web store or download all files in respository.
+- Download all files and folders from [here](https://github.com/diana-egas/aletheia-chrome-extension)
+- Run local server
+`python3 server.py`
 
 # From beginning to end
 ### Step 1: Analyzing the problem
