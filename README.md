@@ -1,7 +1,7 @@
 # Aletheia - Chrome Extension :heavy_check_mark: :x:
 Chrome extension that detect fakeness of images.
 
-# Link to chrome web store! - [Aletheia](https://chrome.google.com/webstore/devconsole/2050c6ce-e678-4fbf-853a-c3c2d6a207bc?hl=pt-BR)
+# Link to chrome web store! - [Aletheia](https://chrome.google.com/webstore/detail/aletheia/blbpmfagfpagmiflmoddellbgdglaofa?hl=pt-BR&authuser=0)
 
 ## Working
 There are two ways of select images to analyze: 
