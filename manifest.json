@@ -15,6 +15,6 @@
         "default_icon": "ananas1.png"
     },
     "icons": { "1": "ananas1.png"},
-    "permissions": ["activeTab", "alarms"]
+    "permissions": ["activeTab", "tabs","storage", "alarms"]
 
 }

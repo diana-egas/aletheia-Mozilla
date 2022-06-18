@@ -11,11 +11,11 @@ def main():
             totalDir += 1
         for Files in files:
             totalFiles += 1
-    #print('numero total files',totalFiles)
+    print('numero total files',totalFiles)
     return str(totalFiles)
     #return arr
 def main_web():
-    APP_FOLDER = 'staticz'
+    APP_FOLDER = 'staticz/'
     totalFiles = 0
     totalDir = 0
     arr = os.listdir(APP_FOLDER)
@@ -57,6 +57,6 @@ def arr_web():
             totalFiles += 1
     #print('numero total files',totalFiles)
     #return str(totalFiles)
-    print(",,",arr1)
+    #print(",,",arr1)
     return arr1
 #main()

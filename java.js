@@ -59,27 +59,41 @@ function execute() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
-     console.log("boas",json[0], json[1][1]);
-     console.log(",", json)
-     path = "./static/uploads/"
+    console.log("tudo0",(json[1][2]))
+    console.log("boas",json[0], json[1][1]);
+    console.log(",", json)
+    path = "./static/uploads/"
       //srcz ="201604621.jpg"
       //console.log(json.length)
-     for (let i = 0; i < json[0].length; i++) {
+    for (let i = 0; i < json[0].length; i++) {
         //console.log(i)
-        var img = document.createElement('img');
-        var h3 = document.createElement("h3");
-        h3.setAttribute("id","h3_u");
+      var img = document.createElement('img');
+      var h3 = document.createElement("h3");  
+      var h3_1 = document.createElement("h3");
+      h3.setAttribute("id","h3_u");
+      h3_1.setAttribute("id","h3_u");
+
 
         //console.log(path.concat(json[i]))
-        elem1 = json[0];
-        elem2 = json[1][0];
+      elem1 = json[0];
+      elem2 = json[1][0];
+      //elem3 = json[1][2];
+      elem3 = json[1][2]
+      img.src = path.concat(elem1[i]);
+      h3.innerHTML = elem2[i];
+      //3 casas decimais
+      conc = " "
+      for (let j = 1; j < 6; j++) {
+      conc = conc +  elem3[j]
+      }
 
-        img.src = path.concat(elem1[i]);
-        h3.innerHTML = elem2[i];
-        //l = json[1]
-        document.getElementById("grid").appendChild(h3);
-        document.getElementById('grid').appendChild(img);
+      h3_1.innerHTML = "fakeness : " + conc + "%";
+      
+      document.getElementById("grid").appendChild(h3_1);
+      document.getElementById("grid").appendChild(h3);
+      document.getElementById('grid').appendChild(img);
      }
+
      //res.style.display ='block';
      //document.getElementById("resultado").innerHTML = JSON.stringify(json[1]);
   })
@@ -144,6 +158,8 @@ function executa_web() {
   .then(response => response.json())
   .then(json => {
       console.log(json)
+
+      console.log("tudo0",(json[1][2]))
       console.log("1",json[1][0]);
       console.log("2",json[1][1]);
       path = "./staticz/"
@@ -153,16 +169,31 @@ function executa_web() {
 
         var img = document.createElement('img');
         var h3 = document.createElement("h3");
+
+        var h3_1 = document.createElement("h3");
+        h3.setAttribute("id","h3_u");
+        h3_1.setAttribute("id","h3_u");
         //console.log(path.concat(json[i]))
         elem_1 = json[0];
         //elem_2 = json[1][1];
         elem_2 = json[1][0]
+
+        elem3 = json[1][2]
         img.src = path.concat(elem_1[i]);
         
         h3.innerHTML = elem_2[i];
         //l = json[1]
+        conc = " "
+        for (let j = 1; j < 6; j++) {
+        conc = conc +  elem3[j]
+        }
+  
+        h3_1.innerHTML = "fakeness : " + Number(conc) + "%";
+
+        document.getElementById("grid1").appendChild(h3_1)
         document.getElementById("grid1").appendChild(h3)
         //console.log("im", img.src)
+        document.createTextNode(" ")
         document.getElementById('grid1').appendChild(img);
       }
     //document.getElementById("resultado_web").style.display ='block';

@@ -155,21 +155,21 @@ SVM = svclassifier_r.score(X_test, y_test)
 y_score= clf.predict_proba(X_test)
 x_decision = svclassifier_r.decision_function(X_test)
 x_pred = svclassifier_r.predict(X_test)
-print(y_score[0])
+print(y_score)
 print(x_pred)
 print()
 
-""" print(classification_report(y_test, x_pred))
+# print(classification_report(y_test, x_pred))
 
-print(confusion_matrix(y_test, x_pred))
-print("")
-print("confusion matrix")
-print(confusion_matrix(y_test, x_pred))
-print("")
-print("True Positives: ",confusion_matrix(y_test, x_pred)[0][0])
-print("False Negatives: ",confusion_matrix(y_test, x_pred)[0][1])
-print("False Positives: ",confusion_matrix(y_test, x_pred)[1][0])
-print("True Negatives: ",confusion_matrix(y_test, x_pred)[1][1])  """
+# print(confusion_matrix(y_test, x_pred))
+# print("")
+# print("confusion matrix")
+# print(confusion_matrix(y_test, x_pred))
+# print("")
+# print("True Positives: ",confusion_matrix(y_test, x_pred)[0][0])
+# print("False Negatives: ",confusion_matrix(y_test, x_pred)[0][1])
+# print("False Positives: ",confusion_matrix(y_test, x_pred)[1][0])
+# print("True Negatives: ",confusion_matrix(y_test, x_pred)[1][1])  
 
 
 
