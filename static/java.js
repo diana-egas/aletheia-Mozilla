@@ -59,6 +59,8 @@ function execute() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
+
+      console.log("tudo1",json)
      console.log("boas",json[0], json[1][1]);
      console.log(",", json)
      path = "./static/uploads/"
@@ -68,16 +70,23 @@ function execute() {
         //console.log(i)
         var img = document.createElement('img');
         var h3 = document.createElement("h3");
+
+        var h3_1 = document.createElement("h3");
         h3.setAttribute("id","h3_u");
 
         //console.log(path.concat(json[i]))
         elem1 = json[0];
         elem2 = json[1][0];
 
+        elem3 = json[1][2];
         img.src = path.concat(elem1[i]);
         h3.innerHTML = elem2[i];
+
+        h3_1.innerHTML = elem3[i];
         //l = json[1]
         document.getElementById("grid").appendChild(h3);
+
+        document.getElementById("grid").appendChild(h3_1);
         document.getElementById('grid').appendChild(img);
      }
      //res.style.display ='block';
@@ -143,9 +152,7 @@ function executa_web() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
-      console.log(json)
-      console.log("1",json[1][0]);
-      console.log("2",json[1][1]);
+      
       path = "./staticz/"
       //srcz ="201604621.jpg"
       //console.log(json.length)
@@ -153,15 +160,30 @@ function executa_web() {
 
         var img = document.createElement('img');
         var h3 = document.createElement("h3");
+
+        var h3_1 = document.createElement("h3");
+        h3.setAttribute("id","h3_u");
+        h3_1.setAttribute("id","h3_u");
         //console.log(path.concat(json[i]))
         elem_1 = json[0];
         //elem_2 = json[1][1];
         elem_2 = json[1][0]
+        //console.log("eleme2", elem_2[1])
+        elem3 = json[1][2]
         img.src = path.concat(elem_1[i]);
-        
         h3.innerHTML = elem_2[i];
         //l = json[1]
+        conc = " "
+        elem4 = elem3[i]
+        for (let j = 2; j < 17; j++) {
+         conc = conc +  elem4[j]
+         }
+
+        h3_1.innerHTML = "fakeness : " + Number(conc)+ "%";
+
+        document.getElementById("grid1").appendChild(h3_1)
         document.getElementById("grid1").appendChild(h3)
+        
         //console.log("im", img.src)
         document.getElementById('grid1').appendChild(img);
       }

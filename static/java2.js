@@ -29,6 +29,8 @@ function execute() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
+
+    console.log("tudo2",json)
      console.log("boas",json[0], json[1][1]);
      path = "./static/uploads/"
       //srcz ="201604621.jpg"
@@ -109,10 +111,11 @@ function hideElement() {
 function executa_web() {
 
   const url = 'http://localhost:5000/execute_web';
-
+  
   fetch(url)
   .then(response => response.json())
   .then(json => {
+    console.log("tudo2",json)
      //console.log("boas",json[1][1]);
       path = "./staticz/"
       //srcz ="201604621.jpg"
@@ -121,6 +124,7 @@ function executa_web() {
 
         var img = document.createElement('img');
         var h3 = document.createElement("h3");
+        h3.setAttribute("id","h3_u");
         //console.log(path.concat(json[i]))
         elem_1 = json[0];
         elem_2 = json[1][1];
