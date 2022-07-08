@@ -1,3 +1,4 @@
+from unittest import result
 from flask import Flask, json, render_template,request, jsonify
 from lxml import html
 import os
@@ -5,7 +6,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import glob
 
-UPLOAD_FOLDER = '/home/diana/Documentos/TESE/exemplo/extension_chrome'
+UPLOAD_FOLDER = '/home/diana/Documentos/TESE/exemplo/my-extension-firefox/static/uploads'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -13,7 +14,10 @@ CORS(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def print():
-    return render_template("index.html")
+    from main import print
+    #return print()
+    x =  print()
+    return render_template("index.html",x = x)
 
 
 @app.route('/uploader', methods = ['GET', 'POST'])
@@ -25,8 +29,7 @@ def upload_file():
             os.remove(f)
         f = request.files['file']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-        #return 'UPLOAD COM SUCESSO', 200
-        return render_template("executa_file.html")
+        return 'sucess', 200
 
     if request.method == 'GET':
         #return render_template("index.html",x = x)
@@ -47,7 +50,6 @@ def web():
 
     from imagens import main
     result = main(url)
-    
     if request.method == 'GET':
         #return render_template("index.html",x = x)
         return jsonify(result) 
@@ -92,4 +94,5 @@ def execute_web():
         return 'Sucesss', 200
 
 if __name__ == "__main__":
+    #app.run(ssl_context='adhoc')
     app.run()

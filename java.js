@@ -33,7 +33,6 @@ let site="x";
 //functions local menu
 
 function submit() {
-
   const url = 'http://localhost:5000/uploader'
 
   fetch(url)
@@ -41,12 +40,12 @@ function submit() {
   .then(json => {
      console.log(json);
   })
+
   document.getElementById("sub").style.display = "none";
   document.getElementById("file").style.display="none";
   document.getElementById("executar_web").style.display="none";
   document.getElementById("executar").style.display ="block";
   document.getElementById("img_down").style.display="none";
-  document.getElementById("upload").style.display="none";
   //add_img();
 }
 
@@ -59,43 +58,28 @@ function execute() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
-    console.log("tudo0",(json[1][2]))
-    console.log("boas",json[0], json[1][1]);
-    console.log(",", json)
-    path = "./static/uploads/"
+     console.log("boas",json[0], json[1][1]);
+     path = "/my-extension-firefox/statiq"
       //srcz ="201604621.jpg"
       //console.log(json.length)
-    for (let i = 0; i < json[0].length; i++) {
+     for (let i = 0; i < json[0].length; i++) {
         //console.log(i)
-      var img = document.createElement('img');
-      var h3 = document.createElement("h3");  
-      var h3_1 = document.createElement("h3");
-      h3.setAttribute("id","h3_u");
-      h3_1.setAttribute("id","h3_u");
-
+        var img = document.createElement('img');
+        var h3 = document.createElement("h3");
+        h3.setAttribute("id","h3_u");
 
         //console.log(path.concat(json[i]))
-      elem1 = json[0];
-      elem2 = json[1][0];
-      //elem3 = json[1][2];
-      elem3 = json[1][2]
-      img.src = path.concat(elem1[i]);
-      h3.innerHTML = elem2[i];
-      //3 casas decimais
-      conc = " "
-      for (let j = 1; j < 6; j++) {
-      conc = conc +  elem3[j]
-      }
+        elem1 = json[0];
+        elem2 = json[1][1];
 
-      h3_1.innerHTML = "fakeness : " + conc + "%";
-      
-      document.getElementById("grid").appendChild(h3_1);
-      document.getElementById("grid").appendChild(h3);
-      document.getElementById('grid').appendChild(img);
+        img.src = path.concat(elem1[i]);
+        h3.innerHTML = elem2[i];
+        //l = json[1]
+        document.getElementById("grid").appendChild(h3);
+        document.getElementById('grid').appendChild(img);
      }
-
-     //res.style.display ='block';
-     //document.getElementById("resultado").innerHTML = JSON.stringify(json[1]);
+     res.style.display ='block';
+     document.getElementById("resultado").innerHTML = JSON.stringify(json[1]);
   })
 }
 
@@ -134,6 +118,7 @@ function loading_img() {
 
   setTimeout(function () {
     //loading_img();
+    console.log("oi")
   document.getElementById("executar_web").style.display="block";
   }, t+5);
 }
@@ -157,11 +142,7 @@ function executa_web() {
   fetch(url)
   .then(response => response.json())
   .then(json => {
-      console.log(json)
-
-      console.log("tudo0",(json[1][2]))
-      console.log("1",json[1][0]);
-      console.log("2",json[1][1]);
+     //console.log("boas",json[1][1]);
       path = "./staticz/"
       //srcz ="201604621.jpg"
       //console.log(json.length)
@@ -169,68 +150,46 @@ function executa_web() {
 
         var img = document.createElement('img');
         var h3 = document.createElement("h3");
-
-        var h3_1 = document.createElement("h3");
-        h3.setAttribute("id","h3_u");
-        h3_1.setAttribute("id","h3_u");
         //console.log(path.concat(json[i]))
         elem_1 = json[0];
-        //elem_2 = json[1][1];
-        elem_2 = json[1][0]
-
-        elem3 = json[1][2]
+        elem_2 = json[1][1];
         img.src = path.concat(elem_1[i]);
         
         h3.innerHTML = elem_2[i];
         //l = json[1]
-        conc = " "
-        for (let j = 1; j < 6; j++) {
-        conc = conc +  elem3[j]
-        }
-  
-        h3_1.innerHTML = "fakeness : " + Number(conc) + "%";
-
-        document.getElementById("grid1").appendChild(h3_1)
         document.getElementById("grid1").appendChild(h3)
         //console.log("im", img.src)
-        document.createTextNode(" ")
         document.getElementById('grid1').appendChild(img);
       }
-    //document.getElementById("resultado_web").style.display ='block';
-    //document.getElementById("resultado").innerHTML = JSON.stringify(json[1])
+    document.getElementById("resultado_web").style.display ='block';
+    document.getElementById("resultado").innerHTML = JSON.stringify(json[1])
   })
 }
 
 
 function local(){
   
+
   document.getElementById("about_text").style.display="none";
   document.getElementById("executar_web").style.display="none";
-  document.getElementById("upload").style.display="none";
+  document.getElementById("upload").style.display="block";
   document.getElementById("img_down").style.display = "none";
-  //document.getElementById("executar").style.display = "none";
-  document.getElementById("teste").style.display = "block";
-  
-
   
 }
 
 function download(){
-  
+
   document.getElementById("about_text").style.display="none";
   document.getElementById("executar_web").style.display="none";
   document.getElementById("upload").style.display="none";
   document.getElementById("download").style.display="block";
   document.getElementById("img_down").style.display = "block";
-  document.getElementById("teste").style.display = "none";
-  document.getElementById("executar").style.display = "none";
 }
 function pageabout(){
-
+  console.log("oi")
   document.getElementById("executar_web").style.display="none";
   document.getElementById("upload").style.display="none";
-  document.getElementById("executar").style.display = "none";
-  document.getElementById("teste").style.display = "none";
+
   document.getElementById("img_down").style.display = "none";
   const about = document.getElementById("about_text");
 
@@ -243,13 +202,10 @@ function pageabout(){
 }
 
 function teste_p(){
-  chrome.tabs.create({ url: "upload_file.html" });
-
-  document.getElementById("executar").style.display ="none";
-}
-
+  console.log("click");
+  browser.tabs.create({url: "index.html"})
   //browser.tabs.create({url: "/index.html"})
-
+}
 /*window.addEventListener('scroll',(event) => {
   console.log('Scrolling...');
 });
@@ -257,12 +213,12 @@ window.onscroll = function(event) {
   console.log("jbk")
 };*/
 
-/*window.onload = function(){
+window.onload = function(){
 
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
   site = tabs[0].url;
-  
-});*/
+});
+
 /*chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
   
 const pop = window.open("index.html", tabs[0].url, 'menubar=0, innerWidth=800, innerHeight=400');
@@ -278,7 +234,6 @@ const pop = window.open("index.html", tabs[0].url, 'menubar=0, innerWidth=800, i
 window.close();*/
 /*const botao = document.getElementById("botao");
 botao.addEventListener("click", call_func, false);*/
-
 //upload 
 const sub = document.getElementById("sub");
 if(sub!=null){
@@ -289,7 +244,6 @@ const l = document.getElementById("local");
 if(l!=null){
 l.addEventListener("click", local, false);
 }
-
 /////////////////////////////////////////////////////
 
 //botao site (faz download)
@@ -297,7 +251,6 @@ const s = document.getElementById("site");
 if(s!=null){
 s.addEventListener("click", download, false);
 }
-
 /*const imagem = document.getElementById("img_down");
 imagem.addEventListener("click", imagens_pausa, false);*/
 
@@ -306,7 +259,6 @@ const executar = document.getElementById("executar");
 if(executar!=null){
 executar.addEventListener("click", execute, false);
 }
-
 //menu site
 const executar_web = document.getElementById("executar_web");
 if(executar_web!=null){
@@ -317,7 +269,6 @@ const down = document.getElementById("img_down");
 if(down!=null){
 down.addEventListener("click", loading_img, false);
 }
-
 //menu about
 const about = document.getElementById("about");
 if(about!=null){
@@ -328,4 +279,4 @@ const teste = document.getElementById("teste");
 if(teste!=null){
 teste.addEventListener("click", teste_p, false);
 }
-//}
+}

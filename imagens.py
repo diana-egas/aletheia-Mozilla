@@ -8,6 +8,7 @@ def folder_create(images):
     
     folder_name = 'staticz'
     #os.mkdir(folder_name)
+    # image downloading start
     download_images(images, folder_name)
 """  try:
     folder_name = 'staticzzz'
@@ -26,23 +27,32 @@ def download_images(images, folder_name):
     # initial count is zero
     count = 0
  
-    #print(f"Total {len(images)} nr images!")
+    # print total images found in URL
+    print(f"Total {len(images)} Image Found!")
  
+    # checking if images is not zero
     if len(images) != 0:
         for i, image in enumerate(images):
             try:
+                # In image tag ,searching for "data-srcset"
                 image_link = image["data-srcset"]
                  
+            # then we will search for "data-src" in img
+            # tag and so on..
             except:
                 try:
+                    # In image tag ,searching for "data-src"
                     image_link = image["data-src"]
                 except:
                     try:
+                        # In image tag ,searching for "data-fallback-src"
                         image_link = image["data-fallback-src"]
                     except:
                         try:
+                            # In image tag ,searching for "src"
                             image_link = image["src"]
  
+                        # if no Source URL found
                         except:
                             pass
 
@@ -50,10 +60,12 @@ def download_images(images, folder_name):
                 r = requests.get(image_link).content
                 try:
  
+                    # possibility of decode
                     r = str(r, 'utf-8')
  
                 except UnicodeDecodeError:
  
+                    # After checking above condition, Image Download start
                     with open(f"{folder_name}/images{i+1}.jpg", "wb+") as f:
                         f.write(r)
  
@@ -87,5 +99,10 @@ def main(url):
         os.remove(f)
     # Call folder create function
     folder_create(images)
-
+ 
+ 
+# take url
+#url = input("Enter URL:- ")
+ 
+# CALL MAIN FUNCTION
 #main(url)

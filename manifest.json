@@ -1,20 +1,20 @@
 {
-    "name": "Aletheia",
-    "description": "A chrome extension that will help you to distinguishbetween fake or real multimedia content.",
+    "name": "Fake pineapple",
+    "description": "teste",
     "version": "1.0",
-    "manifest_version": 3,
-    "host_permissions": [
-		"http://127.0.0.1:5000/*"
-	],
+    "manifest_version": 2,
   "content_scripts": [{
-    "js": ["java.js"],
-    "matches": ["http://*/*", "https://*/*"]
-  }],
-    "action": {
+    "matches": ["*://*.mozilla.org/*"]  }],
+    
+    "browser_action": {
         "default_popup": "index.html",
-        "default_icon": "ananas1.png"
+        "default_icon": "ananas1.png",
+          "browser_style": true
     },
-    "icons": { "1": "ananas1.png"},
-    "permissions": ["activeTab", "tabs","storage", "alarms"]
+    "permissions": ["activeTab", "tabs","storage", "alarms","http://127.0.0.1:5000/*"],
+    "background": {
+    "scripts": ["java.js"]
+}
+    
 
 }
