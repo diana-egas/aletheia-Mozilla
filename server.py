@@ -5,7 +5,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import glob
 
-UPLOAD_FOLDER = '/home/diana/Documentos/extension_chrome/static/uploads'
+UPLOAD_FOLDER = '/home/diana/Documentos/TESE/exemplo/extension_chrome'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -13,10 +13,7 @@ CORS(app)
 
 @app.route("/", methods=['GET', 'POST'])
 def print():
-    from main import print
-    #return print()
-    x =  print()
-    return render_template("index.html",x = x)
+    return render_template("index.html")
 
 
 @app.route('/uploader', methods = ['GET', 'POST'])
@@ -95,5 +92,4 @@ def execute_web():
         return 'Sucesss', 200
 
 if __name__ == "__main__":
-    #app.run(ssl_context='adhoc')
     app.run()

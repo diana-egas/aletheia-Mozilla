@@ -1,6 +1,6 @@
 {
     "name": "Aletheia",
-    "description": "A chrome extension that will help you to distinguish between fake or real multimedia content.",
+    "description": "A chrome extension that will help you to distinguishbetween fake or real multimedia content.",
     "version": "1.0",
     "manifest_version": 3,
     "host_permissions": [
