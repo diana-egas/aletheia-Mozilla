@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+
+<section class="row">
+  {% for image in images %}
+      <img src = "{{ url_for('static', filename='images/' + image) }}"}}>
+    </section>
+  {% endfor %}
+</section>
