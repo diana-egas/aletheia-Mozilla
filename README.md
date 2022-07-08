@@ -14,7 +14,6 @@ There are two ways of select images to analyze:
 2. Site Menu,images of web site are send to server where is processed by svm model. The response contain image and classification: true or false.
 
 # Components
-- Chrome Extension (links)
 - Flask Server
 
 # Installation
