@@ -30,6 +30,7 @@ img {
     opacity: 0.3;
     width:  150px;
     height: 150px;
+	padding-top: 30px;
 }
 #img_down{
 
@@ -54,12 +55,15 @@ img {
 	font-size: large;
 	margin: 0;
 	color: darkred;
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
-	
+    transform: translate(-50%, -50%)  */
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 	/*funciona no upload*/
 	/*margin: 0;
 	position: absolute;
@@ -75,11 +79,15 @@ img {
 
 h3{
 	font-size: large;
-    top: 50%;
+    /* top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50);
+    transform: translate(-50%, -50); */
+	
 	color: darkred;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #grid{
 	position: relative; 

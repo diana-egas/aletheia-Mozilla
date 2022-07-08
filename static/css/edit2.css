@@ -143,8 +143,9 @@ img {
     margin-left: auto;
     margin-right: auto;
     opacity: 0.3;
-    width:  150px;
-    height: 150px;
+    width:  250px; 
+	/* 150 */
+    height: 250px;
 }
 #option{
 	text-align: center;
